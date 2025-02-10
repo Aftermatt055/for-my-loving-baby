@@ -1,0 +1,245 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #f7efef, #ea27b2, #3e012f);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.falling-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.falling-heart {
+    position: fixed;
+    top: -20px;
+    font-size: 20px;
+    animation: fall linear forwards;
+    opacity: 0.7;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(105vh) rotate(360deg);
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+.valentine-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    max-width: 500px;
+    transform-style: preserve-3d;
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+    overflow: visible;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.hearts {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.heart {
+    position: relative;
+    width: 50px;
+    height: 45px;
+    animation: pulse 1.5s infinite;
+}
+
+.heart:before,
+.heart:after {
+    position: absolute;
+    content: "";
+    left: 25px;
+    top: 0;
+    width: 25px;
+    height: 40px;
+    background: #ff4d6d;
+    border-radius: 25px 25px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+h1 {
+    color: #892364;
+    font-size: 3em;
+    margin: 20px 0;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.yes-btn {
+    background: linear-gradient(45deg, #f6ecee, #ff8fab);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+}
+
+.yes-btn:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 77, 109, 0.4);
+}
+
+.no-btn {
+    background: #eb0404;
+    color: #666;
+}
+
+.no-btn:hover {
+    transform: scale(0.9);
+}
+
+.success {
+    text-align: center;
+    color: rgb(227, 231, 236);
+    animation: fadeIn 1s;
+    padding: 20px;
+}
+
+.celebration {
+    animation: celebrate 1s ease-out;
+}
+
+.success h1 {
+    color: rgb(240, 243, 245);
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+.success h2 {
+    font-size: 2.5em;
+    margin-top: 0;
+    font-family: 'Dancing Script', cursive;
+}
+
+.love-message {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+.heart-burst {
+    margin-top: 40px;
+    font-size: 2em;
+    animation: burst 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes celebrate {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes burst {
+    0% { transform: scale(0) rotate(0deg); }
+    100% { transform: scale(1) rotate(360deg); }
+}
+
+.gif-sticker {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+    z-index: 3;
+    animation: popIn 0.5s ease-out forwards;
+}
+
+@keyframes popIn {
+    0% { 
+        transform: scale(0) rotate(-15deg); 
+        opacity: 0;
+    }
+    100% { 
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+
+
+.main-image {
+    width: 200px;
+    height: 200px;
+
+}
+
+.top-decoration {
+    width: 80px;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    transform: rotate(45deg);
+}
+
+.bottom-decoration {
+    width: 100px;
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    opacity: 0.8;
+} 
